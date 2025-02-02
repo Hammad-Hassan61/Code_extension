@@ -1,0 +1,32 @@
+{
+  "name": "ollama-copilot",
+  "displayName": "Ollama Code Copilot",
+  "description": "AI-powered code suggestions using Ollama",
+  "version": "0.1.0",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Programming Languages"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./dist/extension.js",
+  "contributes": {
+      "commands": [{
+          "command": "ollama-copilot.selectContext",
+          "title": "Select Context Files for Ollama"
+      }],
+      "inlineCompletions": [{
+          "id": "ollama-copilot",
+          "selector": ["*"]
+      }]
+  },
+  "scripts": {
+      "compile": "tsc -p ./",
+      "watch": "tsc -watch -p ./",
+      "package": "vsce package"
+  },
+  "dependencies": {
+      "ollama": "^0.1.2"
+  },
+  "devDependencies": {
+      "@types/vscode": "^1.85.0",
+      "typescript": "^5.2.2"
+  }
+}
